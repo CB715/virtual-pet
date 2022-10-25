@@ -25,3 +25,26 @@ describe('naming of pet', () => {
     });
   });
   
+  describe('hunger of pet', () => {
+    it('has an initial hunger of 0', () => {
+      const pet = new Pet('Fido');
+      expect(pet.hunger).toEqual(0);
+    });
+    it('increase the hunger of the pet by 5', () => {
+      const pet = new Pet('Fido');
+      pet.growUp();
+      expect(pet.hunger).toEqual(5);
+    });
+  });
+
+  describe('pet fitness', () => {
+    it('has an initial fitness of 10', () => {
+      const pet = new Pet('Fido');
+      expect(pet.fitness).toEqual(10);
+    });
+    it('decrease the fitness of the pet by 3', () => {
+      const pet = new Pet('Fido');
+      pet.growUp();
+      expect(pet.fitness).toEqual(7);
+    });
+  });
