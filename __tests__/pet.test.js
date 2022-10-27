@@ -64,3 +64,17 @@ describe('naming of pet', () => {
     });
 
   });
+  describe('feeding the pet', () => {
+    it('feeds the pet, decreasing hunger by 3', () => {
+      const pet = new Pet('Fido');
+      pet.hunger = 7;
+      pet.feed();
+      expect(pet.hunger).toEqual(4);
+    });
+    it('decreases hunger with a minimum value of 0', () => {
+      const pet = new Pet('Fido');
+      pet.hunger = 2;
+      pet.feed();
+      expect(pet.hunger).toEqual(0);
+    });
+  });
