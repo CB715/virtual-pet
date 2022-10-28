@@ -78,3 +78,29 @@ describe('naming of pet', () => {
       expect(pet.hunger).toEqual(0);
     });
   });
+
+  describe('check health of the pet', () => {
+    it('returns a string if pet fitness is 3 or less', () => {
+      const pet = new Pet('Fido');
+      pet.fitness = 2;
+      pet.checkUp();
+      expect(pet.checkUp()).toEqual('I need a walk!');
+    });
+    it('returns a string if pet hunger is 5 or more', () => {
+      const pet = new Pet('Fido');
+      pet.hunger = 5;
+      expect(pet.checkUp()).toEqual('I am hungry!');
+    });
+    it('returns string if fitness is 3 or less and hunger is 5 or more', () => {
+      const pet = new Pet('Fido');
+      pet.fitness = 3;
+      pet.hunger = 6;
+      expect(pet.checkUp()).toEqual('I am hungry and I need a walk!');
+    });
+    it('returns string if fitness is over 3 and hunger is below 5', () => {
+      const pet = new Pet('Fido');
+      pet.fitness = 7;
+      pet.hunger = 2;
+      expect(pet.checkUp()).toEqual('I feel great!');
+    });
+  });
