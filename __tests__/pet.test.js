@@ -109,29 +109,36 @@ describe('naming of pet', () => {
     it('returns a false boolean value if pet fitness is 0 or below', () => {
       const pet = new Pet('Fido');
       pet.fitness = 0;
-      expect(pet.isAlive()).toEqual(false);
+      pet.isAlive;
+      expect(pet.isAlive).toEqual(false);
       pet.fitness = -1;
-      expect(pet.isAlive()).toEqual(false);
+      pet.isAlive;
+      expect(pet.isAlive).toEqual(false);
     });
     it('returns a false boolean value if pet hunger is 10 or more', () => {
       const pet = new Pet('Fido');
       pet.hunger = 10;
-      expect(pet.isAlive()).toEqual(false);
+      pet.isAlive;
+      expect(pet.isAlive).toEqual(false);
       pet.hunger = 12;
-      expect(pet.isAlive()).toEqual(false);
+      pet.isAlive;
+      expect(pet.isAlive).toEqual(false);
     });
     it('returns a false boolean value if pet age is 30 or more', () => {
       const pet = new Pet('Fido');
       pet.age = 30;
-      expect(pet.isAlive()).toEqual(false);
+      pet.isAlive;
+      expect(pet.isAlive).toEqual(false);
       pet.age = 33;
-      expect(pet.isAlive()).toEqual(false);
+      pet.isAlive;
+      expect(pet.isAlive).toEqual(false);
     });
     it('returns a true boolean value if pet is alive', () => {
       const pet = new Pet('Fido');
       pet.fitness = 5;
       pet.hunger = 5;
       pet.age = 20;
-      expect(pet.isAlive()).toEqual(true);
+      pet.isAlive;
+      expect(pet.isAlive).toEqual(true);
     });
   });

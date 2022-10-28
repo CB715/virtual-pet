@@ -11,6 +11,12 @@ function Pet(name) {
     this.fitness = MAXIMUM_FITNESS;
 }
 
+Pet.prototype = {
+    get isAlive() {
+      return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+    }
+  };
+
 Pet.prototype.growUp = function () {
     this.age += 1;
     this.hunger += 5;
@@ -47,20 +53,6 @@ Pet.prototype.checkUp = function () {
     else {
         return ('I feel great!');
     };
-};
-Pet.prototype.isAlive = function () {
-    if(this.fitness <= 0) {
-        return false;
-    }
-    if(this.hunger >= 10) {
-        return false;
-    }
-    if(this.age >= 30) {
-        return false;
-    }
-    else {
-        return true;
-    }
 };
 
 
